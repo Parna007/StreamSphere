@@ -1,1 +1,1 @@
-# StreamSphere
+A project based on video-streaming
