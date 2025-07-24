@@ -1,0 +1,35 @@
+.box {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.form {
+    /* text-align: justify;
+    display: grid; */
+    padding: 13px;
+    align-items: center;
+    justify-content: center;
+    max-width: 52%;
+   
+}
+
+.lebel{
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.textarea {
+    height: 3rem;
+    width: 143%;
+    margin-bottom: 1.5rem;
+}
+
+.buttonarea{
+    display: flex;
+    margin-top: 15px;
+}
+
+.button {
+    margin-right: 10px;
+}
