@@ -1,1 +1,3 @@
 serviceAccountKey.json
+dotenv
+/node_modules
