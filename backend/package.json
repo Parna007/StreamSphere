@@ -6,9 +6,8 @@
     "dev": "nodemon server.js",
     "start": "nodemon server.js"
   },
-  
   "keywords": [],
-  "type" :"module",
+  "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
@@ -16,10 +15,12 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.16.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
-    "mongoose": "^8.16.4"
+    "mongoose": "^8.16.4",
+    "multer": "^2.0.2"
   }
 }

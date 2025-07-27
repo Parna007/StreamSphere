@@ -10,7 +10,15 @@ app.use(cors());
 app.use(json());
 
 import authRoutes from './routes/auth.route.js';
+import videoRoutes from './routes/video.route.js';
+import movieRoutes from './routes/movie.route.js';
+import listRoutes from "./routes/userList.route.js";
+
+
+app.use("/api/list", listRoutes);
 app.use('/api/auth', authRoutes);
+app.use("/api/videos", videoRoutes);
+app.use("/api/movies", movieRoutes);
 
 // MongoDB connection
 connect(process.env.MONGODB_URI, {
