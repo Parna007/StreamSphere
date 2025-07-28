@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Build & Deploy
+    name: Deploy backend to Cloud Run
     runs-on: ubuntu-latest
 
     steps:
@@ -19,9 +19,24 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Build and push Docker image to Artifact Registry
+        run: |
+          gcloud auth configure-docker asia-south1-docker.pkg.dev
+          docker build -t asia-south1-docker.pkg.dev/streamspehere/cloud-run-source-deploy/stream-backend:latest .
+          docker push asia-south1-docker.pkg.dev/streamspehere/cloud-run-source-deploy/stream-backend:latest
+
       - name: Deploy to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v2
-        with:
-          service: stream-backend
-          image: asia-south1-docker.pkg.dev/streamspehere/cloud-run-source-deploy/stream-backend
-          region: asia-south1
+        run: |
+          gcloud run deploy stream-backend \
+            --image asia-south1-docker.pkg.dev/streamspehere/cloud-run-source-deploy/stream-backend:latest \
+                --platform managed \
+                --region asia-south1 \
+                --allow-unauthenticated \
+                --port=8080 \
+                --memory=1Gi \
+                --cpu=1 \
+                --timeout=900 \
+                --set-env-vars=MONGODB_URI=${{ secrets.MONGODB_URI }}
