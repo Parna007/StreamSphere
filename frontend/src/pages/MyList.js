@@ -8,11 +8,13 @@ const MyList = () => {
   const [selectedMovie, setSelectedMovie] = useState(null); 
   const auth = getAuth();
   const user = auth.currentUser;
+  //const API_BASE_URL = process.env.BASE_URL;
+
 
   useEffect(() => {
     const fetchList = async () => {
       if (!user) return;
-      const res = await axios.get(`http://localhost:5000/api/list/${user.uid}`);
+      const res = await axios.get(`https://streamspehere.el.r.appspot.com/api/list/${user.uid}`);
       setMyList(res.data);
     };
     fetchList();

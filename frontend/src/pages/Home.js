@@ -9,11 +9,12 @@ const Home = () => {
   const [selectedMovie, setSelectedMovie] = useState(null); // for modal
   const auth = getAuth();
   const user = auth.currentUser;
+  //const API_BASE_URL = process.env.BASE_URL;
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/movies/grouped");
+        const res = await axios.get("https://streamspehere.el.r.appspot.com/api/movies/grouped");
         setGroupedMovies(res.data);
       } catch (err) {
         console.error("Failed to fetch movies", err);
@@ -26,7 +27,7 @@ const Home = () => {
     if (!user) return alert("Please login to save movies");
 
     try {
-      await axios.post("http://localhost:5000/api/list/add", {
+      await axios.post("https://streamspehere.el.r.appspot.com/api/list/add", {
         userId: user.uid,
         movie: {
           movieId: movie._id,
