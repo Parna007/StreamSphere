@@ -17,7 +17,7 @@ const Login = () => {
       const idToken = await user.getIdToken();
 
       // Send token to backend
-      const res = await axios.post('http://localhost:5000/api/auth/google-login', {}, {
+      const res = await axios.post('http://localhost:8080/api/auth/google-login', {}, {
         headers: {
           Authorization: `Bearer ${idToken}`
         }
