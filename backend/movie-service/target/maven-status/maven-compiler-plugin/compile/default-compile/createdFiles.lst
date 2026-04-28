@@ -1,9 +1,12 @@
+com\movie\movie_service\model\WatchProgress.class
 com\movie\movie_service\controller\MovieController.class
-com\movie\movie_service\security\SecurityConfig.class
 com\movie\movie_service\model\Movie$MovieBuilder.class
-com\movie\movie_service\repository\MovieRepository.class
 com\movie\movie_service\MovieServiceApplication.class
-com\movie\movie_service\service\MovieService.class
-com\movie\movie_service\security\JwtAuthenticationFilter.class
+com\movie\movie_service\repository\WatchProgressRepository.class
 com\movie\movie_service\security\JwtUtil.class
 com\movie\movie_service\model\Movie.class
+com\movie\movie_service\security\SecurityConfig.class
+com\movie\movie_service\repository\MovieRepository.class
+com\movie\movie_service\service\MovieService.class
+com\movie\movie_service\security\JwtAuthenticationFilter.class
+com\movie\movie_service\model\WatchProgress$WatchProgressBuilder.class

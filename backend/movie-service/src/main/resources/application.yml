@@ -3,6 +3,6 @@ server:
 
 spring:
   mongodb:
-    uri: ${MONGODB_URI}
+    uri: mongodb+srv://kathikadad12345_db_user:9YTynEm6krg4ECGe@cluster0.ywnumkq.mongodb.net/moviedb-streamphere?appName=Cluster0
 jwt:
-  secret: ${JWT_SECRET}
+  secret: mySecretKeymorethan62bit123456

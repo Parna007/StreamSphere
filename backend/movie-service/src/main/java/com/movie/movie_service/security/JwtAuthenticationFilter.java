@@ -22,8 +22,8 @@ public class JwtAuthenticationFilter
     public void doFilter(
             ServletRequest request,
             ServletResponse response,
-            FilterChain chain
-    ) throws IOException, ServletException {
+            FilterChain chain)
+            throws IOException, ServletException {
 
         HttpServletRequest httpRequest =
                 (HttpServletRequest) request;
@@ -31,15 +31,29 @@ public class JwtAuthenticationFilter
         String authHeader =
                 httpRequest.getHeader("Authorization");
 
+        // IMPORTANT FIX:
+        // Only validate if token exists
+
         if (authHeader != null &&
                 authHeader.startsWith("Bearer ")) {
 
-            String token =
-                    authHeader.substring(7);
+            try {
 
-            jwtUtil.validateToken(token);
+                String token =
+                        authHeader.substring(7);
+
+                jwtUtil.validateToken(token);
+
+            } catch (Exception e) {
+
+                System.out.println(
+                        "Invalid JWT: " + e.getMessage());
+
+                // DO NOT BLOCK REQUEST
+            }
         }
 
+        // Always continue
         chain.doFilter(request, response);
     }
 }

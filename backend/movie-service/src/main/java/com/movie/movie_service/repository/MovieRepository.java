@@ -11,4 +11,10 @@ public interface MovieRepository
     List<Movie> findByGenre(String genre);
 
     List<Movie> findByTrendingTrue();
+
+    List<Movie>
+    findByTitleContainingIgnoreCase(String title);
+
+    List<Movie>
+    findByGenreIgnoreCase(String genre);
 }

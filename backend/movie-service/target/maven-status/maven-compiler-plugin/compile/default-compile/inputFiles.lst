@@ -1,7 +1,9 @@
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\controller\MovieController.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\model\Movie.java
+C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\model\WatchProgress.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\MovieServiceApplication.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\repository\MovieRepository.java
+C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\repository\WatchProgressRepository.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\security\JwtAuthenticationFilter.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\security\JwtUtil.java
 C:\Users\Parna\Desktop\netflix\StreamSphere\backend\movie-service\src\main\java\com\movie\movie_service\security\SecurityConfig.java

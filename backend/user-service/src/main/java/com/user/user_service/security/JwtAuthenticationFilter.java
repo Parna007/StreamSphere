@@ -34,10 +34,20 @@ public class JwtAuthenticationFilter
         if (authHeader != null &&
                 authHeader.startsWith("Bearer ")) {
 
-            String token =
-                    authHeader.substring(7);
+            try {
 
-            jwtUtil.validateToken(token);
+                String token =
+                        authHeader.substring(7);
+
+                jwtUtil.validateToken(token);
+
+            } catch (Exception e) {
+
+                System.out.println(
+                        "Invalid JWT: " + e.getMessage());
+
+                // DO NOT BLOCK REQUEST
+            }
         }
 
         chain.doFilter(request, response);

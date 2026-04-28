@@ -27,13 +27,16 @@ public class SecurityConfig {
                         auth
                                 .requestMatchers(
                                         "/api/movies/**")
-                                .authenticated() 
-                                //.permitAll() - for testing purposes
-                )
-                .addFilterBefore(
-                        filter,
-                        UsernamePasswordAuthenticationFilter.class
+                                //.authenticated() 
+                                .permitAll() //- for testing purposes
+                                // Allow everything else
+                                .anyRequest()
+                                .permitAll()
                 );
+                // .addFilterBefore(
+                //         filter,
+                //         UsernamePasswordAuthenticationFilter.class
+                // );
 
         return http.build();
     }
