@@ -32,11 +32,11 @@ public class SecurityConfig {
                                 // Allow everything else
                                 .anyRequest()
                                 .permitAll()
+                )
+                .addFilterBefore(
+                        filter,
+                        UsernamePasswordAuthenticationFilter.class
                 );
-                // .addFilterBefore(
-                //         filter,
-                //         UsernamePasswordAuthenticationFilter.class
-                // );
 
         return http.build();
     }
