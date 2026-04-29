@@ -66,8 +66,9 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
                 user.getRole());
 
         response.sendRedirect(
-                "http://localhost:3000/login-success?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYXRoaWthZGFkMTIzNDVAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NzY4NjQ5OTksImV4cCI6MTc3Njk1MTM5OX0.FdQMO0YKBzucbRDxACmCx_IeWY5xyPj_mZRuC3V4Obk"
-                        + token
-        );
+                "http://localhost:3000/auth/success"
+                        + "?token=" + token
+                        + "&userId=" + user.getId()
+                );
     }
 }

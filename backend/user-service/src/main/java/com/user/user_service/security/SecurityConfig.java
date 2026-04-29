@@ -38,7 +38,7 @@ public class SecurityConfig {
                                 // All other user APIs require token
                                 .requestMatchers(
                                         "/api/users/**"
-                                ).authenticated()
+                                ).permitAll()//.authenticated()
 
                                 .anyRequest().permitAll()
                 )
