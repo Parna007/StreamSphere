@@ -1,32 +1,48 @@
-import './App.css';
-import {Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import MyList from './pages/MyList';
-import Login from './pages/auth/Login';
+import {
+ //BrowserRouter,
+ Routes,
+ Route
+}
+from "react-router-dom";
+
+import Login
+from "./pages/auth/Login";
+
+import AuthSuccess
+from "./pages/auth/AuthSuccess";
+
+import Home
+from "./pages/Home";
+
 function App() {
-  // const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   const unsub = onAuthStateChanged(auth, (currentUser) => {
-  //     setUser(currentUser);
-  //   });
-  //   return () => unsub();
-  // }, []);
+ return (
 
-  return (
-   <div className='App'>
-     <Navbar/>
-     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/myList" element={<MyList />} />
-    </Routes>
-    <Footer/>
-   </div> 
-   
-  );
+  // <BrowserRouter>
+
+  <Routes>
+
+    <Route
+      path="/"
+      element={<Login />}
+    />
+
+    <Route
+      path="/auth/success"
+      element={<AuthSuccess />}
+    />
+
+    <Route
+      path="/home"
+      element={<Home />}
+    />
+
+
+   </Routes>
+
+  // </BrowserRouter>
+
+ );
 }
 
 export default App;

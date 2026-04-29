@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { getAuth } from "firebase/auth";
+//import { getAuth } from "firebase/auth";
 import "../styles/myList.css";
+import API from "../api/api";
+
 
 const MyList = () => {
   const [myList, setMyList] = useState([]);
@@ -14,7 +16,7 @@ const MyList = () => {
   useEffect(() => {
     const fetchList = async () => {
       if (!user) return;
-      const res = await axios.get(`https://streamspehere.el.r.appspot.com/api/list/${user.uid}`);
+      const res = await API.get(`/api/list/${user.uid}`);
       setMyList(res.data);
     };
     fetchList();

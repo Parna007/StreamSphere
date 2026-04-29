@@ -7,25 +7,9 @@ import '../../styles/signUp.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate = useNavigate();
   const handleGoogleLogin = async () => {
     try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
-
-      // Get the Firebase ID token
-      const idToken = await user.getIdToken();
-
-      // Send token to backend
-      const res = await axios.post('http://localhost:8080/api/auth/google-login', {}, {
-        headers: {
-          Authorization: `Bearer ${idToken}`
-        }
-      });
-
-      console.log("User saved:", res.data);
-      alert("Login successful!");
-      navigate('/');
+      window.location.href = "http://localhost:8000/api/auth/google";
     } catch (err) {
       console.error("Google login error", err);
     }
